@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import styles from "./modules/search.module.css";
 
-function Search({ setResults }) {
+export default function Search({ setResults }) {
   const [query, setQuery] = useState("");
 
   const URL = "https://api.spoonacular.com/recipes/complexSearch";
@@ -10,7 +11,7 @@ function Search({ setResults }) {
     const fetchData = async () => {
       if (!query) return;
 
-      //   const res = await fetch(`${URL}?apiKey=${API_KEY}&query=${query}`);
+      const res = await fetch(`${URL}?apiKey=${API_KEY}&query=${query}`);
       const data = await res.json();
       setResults(data.results);
     };
@@ -19,8 +20,9 @@ function Search({ setResults }) {
   }, [query]);
 
   return (
-    <div>
+    <div className={styles.search}>
       <input
+        className={styles.input}
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
@@ -29,5 +31,3 @@ function Search({ setResults }) {
     </div>
   );
 }
-
-export default Search;

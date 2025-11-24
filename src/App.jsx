@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import Search from "./components/Search";
-import Results from "./components/Results";
+import FoodList from "./components/FoodList";
+import Nav from "./components/Nav";
+import "./App.css";
 
 function App() {
   const [results, setResults] = useState([]);
 
   return (
     <div className="App">
-      <h1>Recipe Search</h1>
+      <Nav />
       <Search setResults={setResults} />
-      <Results results={results} />
+      <FoodList results={results} />
     </div>
   );
 }
