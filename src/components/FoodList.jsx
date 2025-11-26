@@ -5,7 +5,7 @@ export default function FoodList({ results }) {
   return (
     <div>
       {results.map((result) => (
-        <FoodItem key={result.id} result={result} />
+        <FoodItem key={result.id} foodItem={result} />
       ))}
     </div>
   );

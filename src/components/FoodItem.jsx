@@ -1,9 +1,19 @@
-export default function FoodItem({ result }) {
+import styles from "./modules/fooditem.module.css";
+
+export default function FoodItem({ foodItem }) {
   return (
-    <div>
-      <img src={result.image} alt={result.title} />
-      <h1>{result.title}</h1>
-      <button>View Recipe</button>
+    <div className={styles.item}>
+      <img
+        className={styles.itemImage}
+        src={foodItem.image}
+        alt={foodItem.title}
+      />
+      <div className={styles.itemContent}>
+        <p className={styles.itemName}>{foodItem.title}</p>
+      </div>
+      <div className={styles.buttonContainer}>
+        <button className={styles.buttonContent}>View Recipe</button>
+      </div>
     </div>
   );
 }
