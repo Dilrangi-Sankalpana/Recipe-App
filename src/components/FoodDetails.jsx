@@ -1,3 +1,3 @@
-export default function FoodDetails() {
-  return <div>Food Details Component</div>;
+export default function FoodDetails({ selectedFoodID }) {
+  return <div>Food Details Component {selectedFoodID}</div>;
 }
