@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./modules/search.module.css";
 
-export default function Search({ setResults }) {
+export default function Search({ setFoodData }) {
   const [query, setQuery] = useState("");
 
   const URL = "https://api.spoonacular.com/recipes/complexSearch";
@@ -13,7 +13,7 @@ export default function Search({ setResults }) {
 
       const res = await fetch(`${URL}?apiKey=${API_KEY}&query=${query}`);
       const data = await res.json();
-      setResults(data.results);
+      setFoodData(data.results);
     };
 
     fetchData();

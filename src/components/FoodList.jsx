@@ -1,10 +1,10 @@
 import React from "react";
 import FoodItem from "./FoodItem";
 
-export default function FoodList({ results }) {
+export default function FoodList({ foodData }) {
   return (
     <div>
-      {results.map((result) => (
+      {foodData.map((result) => (
         <FoodItem key={result.id} foodItem={result} />
       ))}
     </div>
