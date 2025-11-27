@@ -9,6 +9,7 @@ import InnerContainer from "./components/InnerContainer";
 
 function App() {
   const [foodData, setFoodData] = useState([]);
+  const [selectedFoodID, setSelectedFoodID] = useState("");
 
   return (
     <div className="App">
@@ -16,10 +17,10 @@ function App() {
       <Search setFoodData={setFoodData} />
       <Container>
         <InnerContainer>
-          <FoodList foodData={foodData} />
+          <FoodList foodData={foodData} setSelectedFoodID={setSelectedFoodID} />
         </InnerContainer>
         <InnerContainer>
-          <FoodDetails />
+          <FoodDetails selectedFoodID={selectedFoodID} />
         </InnerContainer>
       </Container>
     </div>
