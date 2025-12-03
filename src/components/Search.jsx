@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styles from "./modules/search.module.css";
 
-export default function Search({ setFoodData }) {
+export default function Search({ setFoodData, setSelectedFoodID }) {
   const [query, setQuery] = useState("");
 
   const URL = "https://api.spoonacular.com/recipes/complexSearch";
-  const API_KEY = "dca2e049b42a42ea895400a3aa8ab213";
+  const API_KEY = "YOUR_API_KEY_HERE"; // Replace with your actual API key
 
   useEffect(() => {
     const fetchData = async () => {
