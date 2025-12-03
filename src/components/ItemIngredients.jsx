@@ -1,16 +1,20 @@
+import styles from "./modules/itemIngredients.module.css";
+
 export default function ItemIngredients({ ingredient }) {
   return (
-    <div>
-      <li>
-        <h3>{ingredient.name}</h3>
+    <div className={styles.ingredientItem}>
+      <div>
         <img
           src={`https://spoonacular.com/cdn/ingredients_100x100/${ingredient.image}`}
           alt={ingredient.name}
         />
-        <h3>
+      </div>
+      <div>
+        <div className={styles.ingredientName}>{ingredient.name}</div>
+        <div className={styles.ingredientAmount}>
           {ingredient.amount} {ingredient.unit}
-        </h3>
-      </li>
+        </div>
+      </div>
     </div>
   );
 }

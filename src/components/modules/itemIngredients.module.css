@@ -1,0 +1,19 @@
+.ingredientItem {
+  flex: 0 0 30%;
+  box-sizing: border-box;
+  padding: 5px;
+  text-align: center;
+  margin: auto;
+}
+
+.ingredientName {
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.ingredientAmount {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 10px;
+}

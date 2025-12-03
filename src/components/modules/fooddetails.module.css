@@ -36,7 +36,6 @@
 
 .recipeInstructions {
   padding: 0;
-  border-radius: 5px;
   color: #adaab0;
 }
 
@@ -47,4 +46,10 @@
 .recipeInstructions li {
   margin-bottom: 10px;
   line-height: 1.5;
+}
+
+.itemIngredients {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
