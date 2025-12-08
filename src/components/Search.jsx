@@ -8,17 +8,24 @@ export default function Search({ setFoodData, setSelectedFoodID }) {
   const API_KEY = "YOUR_API_KEY_HERE"; // Replace with your actual API key
 
   useEffect(() => {
-    const fetchData = async () => {
-      if (!query) return;
+    const timer = setTimeout(() => {
+      const fetchData = async () => {
+        if (!query) {
+          setFoodData([]);
+          return;
+        }
 
-      setSelectedFoodID("");
+        setSelectedFoodID("");
 
-      const res = await fetch(`${URL}?apiKey=${API_KEY}&query=${query}`);
-      const data = await res.json();
-      setFoodData(data.results);
-    };
+        const res = await fetch(`${URL}?apiKey=${API_KEY}&query=${query}`);
+        const data = await res.json();
+        setFoodData(data.results);
+      };
 
-    fetchData();
+      fetchData();
+    }, 500);
+
+    return () => clearTimeout(timer);
   }, [query]);
 
   return (
