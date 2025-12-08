@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <Search setFoodData={setFoodData} />
+      <Search setFoodData={setFoodData} setSelectedFoodID={setSelectedFoodID} />
       <Container>
         <InnerContainer>
           <FoodList foodData={foodData} setSelectedFoodID={setSelectedFoodID} />

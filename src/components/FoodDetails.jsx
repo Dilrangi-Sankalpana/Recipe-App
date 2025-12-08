@@ -11,7 +11,10 @@ export default function FoodDetails({ selectedFoodID }) {
 
   useEffect(() => {
     const fetchFoodDetails = async () => {
-      if (!selectedFoodID) return;
+      if (!selectedFoodID) {
+        setFoodDetails(null);
+        return;
+      }
 
       setLoading(true);
       const res = await fetch(`${URL}?apiKey=${API_KEY}`);

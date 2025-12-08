@@ -11,6 +11,8 @@ export default function Search({ setFoodData, setSelectedFoodID }) {
     const fetchData = async () => {
       if (!query) return;
 
+      setSelectedFoodID("");
+
       const res = await fetch(`${URL}?apiKey=${API_KEY}&query=${query}`);
       const data = await res.json();
       setFoodData(data.results);
